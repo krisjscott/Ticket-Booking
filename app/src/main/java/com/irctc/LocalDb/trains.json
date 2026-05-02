@@ -1,0 +1,90 @@
+[
+  {
+    "train_id": "bacs",
+    "train_no": 12345,
+    "seats": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "stations": {
+      "Pune": "18:30:02",
+      "Hyderabad": "02:25:00",
+      "Bangalore": "06:22:24"
+    },
+    "stations": [
+      "pune",
+      "hyderabad",
+      "bangalore"
+    ]
+  },
+  {
+    "train_id": "abab",
+    "train_no": 54321,
+    "seats": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "stations": {
+      "Hyderabad": "16:30:02",
+      "Manipur": "22:27:45",
+      "Chennai": "02:60:24"
+    },
+    "stations": [
+      "Hyderabad",
+      "Manipur",
+      "Chennai"
+    ]
+  }
+]
