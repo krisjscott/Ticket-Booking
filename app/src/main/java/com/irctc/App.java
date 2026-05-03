@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.*;
 
 
+
 public class App {
     public static void main(String[] args) throws IOException {
         System.out.println("Running Train booking system: ");
@@ -42,7 +43,13 @@ public class App {
             System.out.println("5. Book a seat");
             System.out.println("6. Cancel my booking");
             System.out.println("7. Exit");
-            option = scanner.nextInt();
+            try {
+                option = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("Please enter a valid number");
+                scanner.next();
+                continue;
+            }
             switch (option){
                 case 1:
                     System.out.println("Enter the username");
