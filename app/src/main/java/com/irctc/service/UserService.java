@@ -17,8 +17,8 @@ public class UserService {
     private User user;
     private List<User> userList;
 
-    private static final ObjectMapper objectMapper = new ObjectMapper();
-    private static final String USERS_PATH = "../LocalDb/users.json";
+    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final String USERS_PATH = "../LocalDb/users.json";
 
     public UserService(User user1) throws IOException {
         this.user = user1;
@@ -88,5 +88,29 @@ public class UserService {
 
     public List<List<Integer>> fetchSeats(Train train) {
         return train.getSeats();
+    }
+
+    public Boolean bookTrainSeat(Train train, int row, int col) {
+        try{
+            TrainService trainService = new TrainService();
+            List<List<Integer>> seats = train.getSeats();
+            if(row>=0 && row<seats.size() && col>=0 && col<seats.get(row).size()) {
+                if (seats.get(row).get(col) == 0) {
+                    seats.get(row).set(col, 1);
+                    train.setSeats(seats);
+                    trainService.addTrain(train);
+                    return true; // Booking successful
+                } else {
+                    return false; // Seat is already booked
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch (IOException e) {
+            return Boolean.FALSE;
+        }
     }
 }

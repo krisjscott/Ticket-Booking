@@ -3,7 +3,7 @@ package com.irctc.service;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.irctc.model.Train;
-import com.irctc.model.User;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.util.OptionalInt;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import static com.irctc.service.UserService.objectMapper;
+
 
 public class TrainService {
 

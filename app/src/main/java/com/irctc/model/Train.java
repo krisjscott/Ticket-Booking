@@ -41,42 +41,57 @@ public class Train {
     public String getTrainId() {
         return trainId;
     }
+
     public void setTrainId(String trainId) {
         this.trainId = trainId;
     }
+
     public String getTrainNo() {
         return trainNo;
     }
+
     public void setTrainNo(String trainNo) {
-        trainNo = trainNo;
+        this.trainNo = trainNo;
     }
+
     public Time getDeparture() {
         return Departure;
     }
+
     public String getTrainInfo(){
         return String.format("Train ID: %s Train no: %S", trainId, trainNo);
     }
+
     public Time getArrival(){
         return arrival;
     }
+
     public List<String> getStation() {
         return stations;
     }
+
     public void setStations(List<String> stations) {
         this.stations = stations;
     }
+
     public void setArrival(Time arrival) {
         this.arrival = arrival;
     }
+
     public Map<String, String> getStationTime() {
         return stationTime;
     }
+
     public void setStationTime(Map<String, String> stationTime) {
         this.stationTime = stationTime;
     }
 
     public List<List<Integer>> getSeats() {
         return seats;
+    }
+
+    public void setSeats(List<List<Integer>> seats) {
+        this.seats = seats;
     }
 }
 

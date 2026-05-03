@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.*;
 
 
-public class  App {
+public class App {
     public static void main(String[] args) throws IOException {
         System.out.println("Running Train booking system: ");
         Scanner scanner = new Scanner(System.in);
@@ -40,6 +40,7 @@ public class  App {
 
             User currentUser = null;
             Train trainSelectedForBooking = new Train();
+            BookingService bookingService = new BookingService();
             switch (option){
                 case 1:
                     System.out.println("Enter the username");
@@ -70,7 +71,6 @@ public class  App {
                     break;
                 case 3:
                     if (currentUser != null) {
-                        BookingService bookingService = new BookingService();
                         bookingService.fetchBooking(currentUser);
                     } else {
                         System.out.println("Please login first");
@@ -94,6 +94,33 @@ public class  App {
                 case 5:
                     System.out.println("Select a seat out of these seats");
                     List<List<Integer>> seats = userService.fetchSeats(trainSelectedForBooking);
+                    for(List<Integer> seat: seats){
+                        for(Integer i: seat){
+                            System.out.print(" Seat id :" +i);
+                        }
+                        System.out.println();
+                    }
+                    System.out.println("Select a train by typing 1,2,3...");
+                    System.out.println("Enter the row: ");
+                    int row = scanner.nextInt();
+                    System.out.println("Enter the column: ");
+                    int col = scanner.nextInt();
+                    System.out.println("Booking your seat");
+                    Boolean booked = userService.bookTrainSeat(trainSelectedForBooking, row, col);
+                    if(booked.equals(Boolean.TRUE)){
+                        System.out.println("Seat has been booked");
+                    }
+                    else{
+                        System.out.println("Can't book this seat");
+                    }
+                    break;
+                case 6:
+                    System.out.println("Enter your booking id");
+                    String Booking_id = scanner.nextLine();
+                    bookingService.cancelBooking(Booking_id);
+                default:
+                    System.out.println("Invalid option");
+                    break;
             }
         }
     }
