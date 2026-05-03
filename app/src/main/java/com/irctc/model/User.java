@@ -27,7 +27,7 @@ public class User {
     }
     public void printTicket(){
         for(int i=0;i<ticketsBooked.size();i++){
-            System.out.println(ticketsBooked.get(i).toString());
+            System.out.println(ticketsBooked.get(i).getTicket().getTrainInfo());
         }
     }
     public void setName(String name){
@@ -41,6 +41,9 @@ public class User {
     }
     public void setUserID(String userID){
         this.UserID = userID;
+    }
+    public void setHashPassword(String hashPassword){
+        this.hashPassword = hashPassword;
     }
 
 

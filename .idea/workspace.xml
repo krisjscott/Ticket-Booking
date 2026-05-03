@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0a8d6df0-bd88-4b36-a6e8-cb5dca6dbac7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/BookingService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/util/UserServiceUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Train.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/UserBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/UserBooking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/UserBooking.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,6 +115,15 @@
           <line>11</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/irctc/model/Ticket.java</url>
+          <line>48</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.io.IOException" package="java.io" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

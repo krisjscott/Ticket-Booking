@@ -8,7 +8,7 @@ import java.util.List;
 public class Train {
 
     private String trainId;
-    private String TrainNo;
+    private String trainNo;
     private Time Departure;
     private Time arrival;
     private List<List<Integer>> seats;
@@ -19,7 +19,7 @@ public class Train {
 
     public Train(String trainId, String trainNo, Time departure, Time arrival, List<List<Integer>> seats, Map<String, Date> stationTime, List<String> stations) {
         this.trainId = trainId;
-        this.trainId = trainNo;
+        this.trainNo = trainNo;
         this.Departure = departure;
         this.arrival = arrival;
         this.seats = seats;
@@ -34,13 +34,16 @@ public class Train {
         this.trainId = trainId;
     }
     public String getTrainNo() {
-        return TrainNo;
+        return trainNo;
     }
     public void setTrainNo(String trainNo) {
-        TrainNo = trainNo;
+        trainNo = trainNo;
     }
     public Time getDeparture() {
         return Departure;
+    }
+    public String getTrainInfo(){
+        return String.format("Train ID: %s Train no: %S", trainId, trainNo);
     }
 
 }

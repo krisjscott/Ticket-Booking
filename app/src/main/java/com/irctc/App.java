@@ -3,22 +3,13 @@
  */
 package com.irctc;
 
-import org.example.list.LinkedList;
+import java.util.Scanner;
 
-import static org.example.utilities.StringUtils.join;
-import static org.example.utilities.StringUtils.split;
-import static com.irctc.MessageUtils.getMessage;
-
-import org.apache.commons.text.WordUtils;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class  App {
     public static void main(String[] args) {
-        List<Integer> l = Arrays.asList(1,2,3,4,5);
-        List<Integer> l1 = l.stream().filter(i->i%2==0).collect(Collectors.toList());
+        System.out.println("Running Train booking system: ");
+        Scanner scanner = new Scanner(System.in);
 
     }
 }
