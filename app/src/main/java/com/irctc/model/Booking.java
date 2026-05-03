@@ -31,7 +31,7 @@ public class Booking {
           return bookingId;
      }
 
-     public static String getUserId() {
+     public String getUserId() {
           return userId;
      }
 

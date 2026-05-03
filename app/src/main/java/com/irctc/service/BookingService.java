@@ -1,6 +1,7 @@
 package com.irctc.service;
 
 import com.irctc.model.Booking;
+import com.irctc.model.User;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -38,6 +39,10 @@ public class BookingService {
         return false;
     }
 
+    public static void fetchBooking(User user){
+
+        user.printTicket();
+    }
 
 
     private String generateBookingID() {

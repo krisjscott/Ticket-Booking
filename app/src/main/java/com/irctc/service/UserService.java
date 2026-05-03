@@ -2,7 +2,7 @@ package com.irctc.service;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.irctc.model.Booking;
+import com.irctc.model.Train;
 import com.irctc.model.User;
 import com.irctc.util.UserServiceUtil;
 
@@ -20,12 +20,23 @@ public class UserService {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     private static final String USERS_PATH = "../LocalDb/users.json";
 
-    public UserService(User user1) {
+    public UserService(User user1) throws IOException {
         this.user = user1;
-        this.userList = loadUsers();
+        loadUser();
     }
 
-    private List<User> loadUsers() {
+    public UserService() throws IOException {
+        loadUser();
+    }
+
+    public List<User> loadUser() throws IOException {
+        File file = new File(USERS_PATH);
+        userList = objectMapper.readValue(file, new TypeReference<List<User>>() {
+        });
+        return userList;
+    }
+
+    public List<User> loginUser() {
         File users = new File(USERS_PATH);
         if (!users.exists()) {
             return new ArrayList<>();
@@ -44,7 +55,7 @@ public class UserService {
         }
     }
 
-    public boolean loginUser(){
+    public boolean getUser(){
         Optional<User> foundUser = userList.stream().filter(user1 -> {
             return user1.getName().equalsIgnoreCase(user.getName()) && UserServiceUtil.checkPassword(user.getPassword(), user1.getPassword());
         }).findFirst();
@@ -68,4 +79,14 @@ public class UserService {
         //object(user) --> json --> serialize
     }
 
+    public List<Train> getTrains(String source, String destination) throws IOException {
+
+        TrainService trainService = new TrainService();
+        return trainService.searchTrains(source, destination);
+
+    }
+
+    public List<List<Integer>> fetchSeats(Train train) {
+        return train.getSeats();
+    }
 }

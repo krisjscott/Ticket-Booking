@@ -3,13 +3,98 @@
  */
 package com.irctc;
 
-import java.util.Scanner;
+import com.irctc.model.Train;
+import com.irctc.model.User;
+import com.irctc.service.BookingService;
+import com.irctc.service.TrainService;
+import com.irctc.service.UserService;
+import com.irctc.util.UserServiceUtil;
+
+import java.io.IOException;
+import java.util.*;
 
 
 public class  App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Running Train booking system: ");
         Scanner scanner = new Scanner(System.in);
+        int option = 0;
+        UserService userService;
+        try{
+            userService = new UserService();
+        }
+        catch(IOException e){
+            System.out.println("Error in user service");
+            return;
+        }
+        while(option!=7){
+            System.out.println("Choose an option: ");
+            System.out.println("1. Sign UP");
+            System.out.println("2. Login IN");
+            System.out.println("3. Fetch Booked Tickets");
+            System.out.println("4. Search Trains");
+            System.out.println("5. Book a seat");
+            System.out.println("6. Cancel my booking");
+            System.out.println("7. Exit");
+            option = scanner.nextInt();
 
+            User currentUser = null;
+            Train trainSelectedForBooking = new Train();
+            switch (option){
+                case 1:
+                    System.out.println("Enter the username");
+                    String username = scanner.next();
+                    System.out.println("Enter the password");
+                    String password = scanner.next();
+                    User userToSignup = new User(username, password,
+                            UserServiceUtil.hashPassword(password),
+                            new ArrayList<>(), UUID.randomUUID().toString());
+                    userService.signUp(userToSignup);
+                    break;
+
+                case 2:
+                    System.out.println("Enter the username");
+                    username = scanner.next();
+                    System.out.println("Enter the password");
+                    password = scanner.next();
+                    User userTologin = new User(username, password, UserServiceUtil.hashPassword(password),
+                            new ArrayList<>(), UUID.randomUUID().toString());
+                    currentUser = userTologin;
+
+                    try{
+                        userService = new UserService(currentUser);
+                    }
+                    catch(IOException e){
+                        System.out.println("Error in user service");
+                    }
+                    break;
+                case 3:
+                    if (currentUser != null) {
+                        BookingService bookingService = new BookingService();
+                        bookingService.fetchBooking(currentUser);
+                    } else {
+                        System.out.println("Please login first");
+                    }
+                case 4:
+                    System.out.println("Type your source station");
+                    String source = scanner.next();
+                    System.out.println("Type your destination station");
+                    String dest = scanner.next();
+                    List<Train> trains = userService.getTrains(source, dest);
+                    int index = 1;
+                    for (Train t: trains){
+                        System.out.println(index+" Train id : "+t.getTrainId());
+                        for (Map.Entry<String, String> entry: t.getStationTime().entrySet()){
+                            System.out.println("station "+entry.getKey()+" time: "+entry.getValue());
+                        }
+                    }
+                    System.out.println("Select a train by typing 1,2,3...");
+                    trainSelectedForBooking = trains.get(scanner.nextInt());
+                    break;
+                case 5:
+                    System.out.println("Select a seat out of these seats");
+                    List<List<Integer>> seats = userService.fetchSeats(trainSelectedForBooking);
+            }
+        }
     }
 }

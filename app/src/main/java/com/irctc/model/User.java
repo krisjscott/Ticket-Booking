@@ -9,15 +9,21 @@ public class User {
     private List<Ticket> ticketsBooked;
     private String UserID;
 
-
-    public String getHashPassword(String hashPassword){
+    public User(String Name, String password, String hashPassword, List ticketsBooked, String userID){
+        this.Name = Name;
+        this.password = password;
+        this.hashPassword = hashPassword;
+        this.ticketsBooked = ticketsBooked;
+        UserID = userID;
+    }
+    public String getHashPassword(String HashPassword){
         return hashPassword;
     }
-    public List getTicketsBooked(List<Ticket> ticketsBooked) {
+    public List getTicketsBooked(List<Ticket> TicketsBooked) {
         return ticketsBooked;
     }
     public String getUserID(String userID){
-        return userID;
+        return UserID;
     }
     public String getName(){
         return Name;
