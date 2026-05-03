@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class UserBooking {
 
@@ -17,8 +18,8 @@ public class UserBooking {
     private static final ObjectMapper objectMapper = new ObjectMapper();
     private static final String USERS_PATH = "../LocalDb/users.json";
 
-    public UserBooking(User user) {
-        this.user = user;
+    public UserBooking(User user1) {
+        this.user = user1;
         this.userList = loadUsers();
     }
 
@@ -38,6 +39,23 @@ public class UserBooking {
         {
             e.printStackTrace();
             return new ArrayList<>();
+        }
+    }
+
+    public boolean loginUser(){
+        Optional<User> foundUser = userList.stream().filter(user1 -> {
+            return user1.getName().equals(user.getName()) && UserServiveUtil.checkPassword(user.getPassword(), user1.getPassword())
+        }).findFirst();
+        return foundUser.isPresent();
+    }
+    public boolean signUp(User user1){
+        try{
+            userList.add(user1);
+            saveUserListToFile();
+            return true;
+        }
+        catch(IOException ex){
+            return false;
         }
     }
 }
