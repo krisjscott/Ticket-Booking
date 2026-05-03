@@ -1,7 +1,9 @@
 package com.irctc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.Date;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticket {
     private String ticketId;
     private String UserId;
@@ -10,9 +12,9 @@ public class Ticket {
     private Date LocalDate;
     private Train ticket;
 
-    Ticket(){}
+    public Ticket(){}
 
-    Ticket(String ticketId, String UserId, String source, String destination, Train ticket, Date LocalDate) {
+    public Ticket(String ticketId, String UserId, String source, String destination, Train ticket, Date LocalDate) {
         this.ticketId = ticketId;
         this.UserId = UserId;
         this.source = source;

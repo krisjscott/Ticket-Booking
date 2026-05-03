@@ -1,10 +1,16 @@
 package com.irctc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+import lombok.Builder;
 import java.util.Map;
 import java.sql.Time;
-import java.util.Date;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
+@Builder
 public class Train {
 
     private String trainId;
@@ -70,9 +76,13 @@ public class Train {
         return stations;
     }
 
-    public void setStations(List<String> stations) {
+    public void setStation(List<String> stations) {
         this.stations = stations;
     }
+
+//    public void setStations(List<String> stations) {
+//        this.stations = stations;
+//    }
 
     public void setArrival(Time arrival) {
         this.arrival = arrival;

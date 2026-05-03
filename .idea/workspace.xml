@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0a8d6df0-bd88-4b36-a6e8-cb5dca6dbac7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/LocalDb/trains.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/LocalDb/trains.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/LocalDb/users.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/LocalDb/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Train.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/Train.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/TrainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/TrainService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/irctc/service/UserService.java" afterDir="false" />
     </list>
@@ -41,8 +47,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
     "Gradle.IRCTC [:app:com.irctc.App.main()].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",

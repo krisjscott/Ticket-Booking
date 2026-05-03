@@ -1,13 +1,18 @@
 package com.irctc.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
     private String Name;
     private String password;
+
     private String hashPassword;
     private List<Ticket> ticketsBooked;
     private String UserID;
+
+    public User() {}
 
     public User(String Name, String password, String hashPassword, List ticketsBooked, String userID){
         this.Name = Name;
@@ -16,41 +21,50 @@ public class User {
         this.ticketsBooked = ticketsBooked;
         UserID = userID;
     }
-    public String getHashPassword(String HashPassword){
+    public String getHashPassword(){
         return hashPassword;
     }
-    public List getTicketsBooked(List<Ticket> TicketsBooked) {
+    public List getTicketsBooked() {
         return ticketsBooked;
     }
-    public String getUserID(String userID){
+    public String getUserID(){
         return UserID;
     }
+
     public String getName(){
         return Name;
     }
+
     public String getPassword(){
         return password;
     }
+
     public void printTicket(){
         for(int i=0;i<ticketsBooked.size();i++){
             System.out.println(ticketsBooked.get(i).getTicket().getTrainInfo());
         }
     }
+
     public void setName(String name){
         this.Name = name;
     }
+
     public void setPassword(String password){
         this.password = password;
     }
+
     public void setTicketsBooked(List<Ticket> ticketsBooked){
         this.ticketsBooked = ticketsBooked;
     }
+
     public void setUserID(String userID){
         this.UserID = userID;
     }
+
     public void setHashPassword(String hashPassword){
         this.hashPassword = hashPassword;
     }
+
 
 
 
