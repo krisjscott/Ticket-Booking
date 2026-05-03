@@ -40,9 +40,15 @@ public class User {
     }
 
     public void printTicket(){
-        for(int i=0;i<ticketsBooked.size();i++){
+        if(ticketsBooked.size()>0){
+            for(int i=0;i<ticketsBooked.size();i++){
             System.out.println(ticketsBooked.get(i).getTicket().getTrainInfo());
+            }
         }
+        else{
+            System.out.println("No Tickets Booked");
+        }
+
     }
 
     public void setName(String name){
