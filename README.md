@@ -101,4 +101,4 @@ This project is open source. Feel free to use and modify it.
 
 The diagram below outlines the LLD for this project, including functional requirements, entity models, service layer, and app flow.
 
-![Ticket Booking System LLD](lld-whiteboard.png)
+![Ticket Booking System LLD](file:///home/krisjscott/Downloads/lld-whiteboard.png)
