@@ -27,17 +27,17 @@ public class BookingService {
         return booking;
     }
 
-    public boolean cancelBooking(String bookingId){
-        for(Booking booking : bookings) {
-            if (booking.getBookingId().equals(bookingId)) {
-                bookings.remove(booking);
-                System.out.println("Booking cancelled successfully");
-                return true;
-            }
-        }
-        System.out.println("Booking cancelled failed");
-        return false;
-    }
+//    public boolean cancelBooking(String bookingId){
+//        for(Booking booking : bookings) {
+//            if (booking.getBookingId().equals(bookingId)) {
+//                bookings.remove(booking);
+//                System.out.println("Booking cancelled successfully");
+//                return true;
+//            }
+//        }
+//        System.out.println("Booking cancelled failed");
+//        return false;
+//    }
 
     public static void fetchBooking(User user){
 

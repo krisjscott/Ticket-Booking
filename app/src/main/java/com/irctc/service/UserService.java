@@ -136,6 +136,20 @@ public class UserService {
         }
     }
 
+    public boolean cancelBooking(String ticketId) {
+        List<Ticket> tickets = user.getTicketsBooked();
+        for (int i = 0; i < tickets.size(); i++) {
+            if (tickets.get(i).getTicketId().equals(ticketId)) {
+                tickets.remove(i);
+                updateUserInFile();
+                System.out.println("Booking cancelled successfully");
+                return true;
+            }
+        }
+        System.out.println("No booking found with that ID");
+        return false;
+    }
+
     private void updateUserInFile() {
         for (int i = 0; i < userList.size(); i++) {
             if (userList.get(i).getUserID().equals(user.getUserID())) {

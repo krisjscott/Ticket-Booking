@@ -85,6 +85,10 @@ public class App {
                     }
                     break;
                 case 4:
+                    if (currentUser == null) {
+                        System.out.println("Please login first");
+                        break;
+                    }
                     System.out.println("Type your source station");
                     selectedSource = scanner.next();
                     System.out.println("Type your destination station");
@@ -108,6 +112,10 @@ public class App {
                     trainSelectedForBooking = trains.get(scanner.nextInt() - 1);
                     break;
                 case 5:
+                    if (currentUser == null) {
+                        System.out.println("Please login first");
+                        break;
+                    }
                     if (trainSelectedForBooking.getSeats() == null) {
                         System.out.println("Please search and select a train first (option 4)");
                         break;
@@ -135,9 +143,14 @@ public class App {
                     }
                     break;
                 case 6:
-                    System.out.println("Enter your booking id");
-                    String Booking_id = scanner.nextLine();
-                    bookingService.cancelBooking(Booking_id);
+                    if (currentUser == null) {
+                        System.out.println("Please login first");
+                        break;
+                    }
+                    System.out.println("Enter your ticket id");
+                    String Booking_id = scanner.next();
+                    userService.cancelBooking(Booking_id);
+                    break;
                 default:
                     System.out.println("Invalid option");
                     break;
