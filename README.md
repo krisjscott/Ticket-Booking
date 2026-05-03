@@ -58,6 +58,10 @@ gradlew.bat build
 
 ```bash
 ./gradlew :app:run
+
+or
+
+Just set the App as the main file for project from Project Structure
 ```
 
 ---
@@ -93,7 +97,7 @@ This project is open source. Feel free to use and modify it.
 
 ## 👤 Author
 
-**krisjscott** — [GitHub Profile](https://github.com/krisjscott)
+**Krish Kumar** — [GitHub Profile](https://github.com/krisjscott)
 
 ---
 
@@ -101,4 +105,5 @@ This project is open source. Feel free to use and modify it.
 
 The diagram below outlines the LLD for this project, including functional requirements, entity models, service layer, and app flow.
 
-![Ticket Booking System LLD](file:///home/krisjscott/Downloads/lld-whiteboard.png)
+![Ticket Booking System LLD]<img width="1000" height="2540" alt="lld-whiteboard" src="https://github.com/user-attachments/assets/32d4bf7f-af54-494c-a8fa-59b5c38c736e" />
+
