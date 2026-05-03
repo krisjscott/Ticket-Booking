@@ -67,6 +67,7 @@ public class App {
                         Optional<User> loggedIn = userService.fetchUser();
                         if (loggedIn.isPresent()) {
                             currentUser = loggedIn.get();
+                            userService.setUser(currentUser);
                             System.out.println("Login successful! Welcome, " + currentUser.getName());
                         } else {
                             System.out.println("Invalid username or password");

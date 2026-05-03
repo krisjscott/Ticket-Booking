@@ -62,6 +62,10 @@ public class UserService {
         return fetchUser().isPresent();
     }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Optional<User> fetchUser(){
         return userList.stream().filter(user1 -> {
             try {
